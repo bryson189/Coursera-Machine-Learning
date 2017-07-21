@@ -17,18 +17,10 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
-
-
-
-
-
-
-
-
-
-
+	temp = X * theta -y; % m x 1 vector
+	delta = (1 / m) * (temp)' * X; % 1 x n vector
+	theta = theta - alpha * delta'; % n x 1 vector (transpose delta to change it to n x 1)
     % ============================================================
-
     % Save the cost J in every iteration    
     J_history(iter) = computeCostMulti(X, y, theta);
 
